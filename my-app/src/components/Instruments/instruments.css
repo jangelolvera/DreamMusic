@@ -1,0 +1,47 @@
+html, body{
+    height: 100%;
+    width: 100%;
+}
+
+#root{
+    height: 100%;
+    width: 100%;
+    display: flex;
+    flex-wrap: wrap;
+}
+
+#artSquare{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    background-color: white;
+    border: 0px;
+    border-radius: 10px;
+
+}
+
+.artTable{
+    width: 305px;
+    height: 500px;
+    padding: 0%;
+    background-color: white;
+    border-radius: 10px;
+}
+
+.App{
+    margin: 20px;
+    height: 500px;
+}
+
+#compName:hover{
+    color:white;
+    background-color: #4DA167;
+    cursor: pointer;
+    border-radius: 5px;
+}
+
+#artSquare:hover{
+    background-color: white;
+    border: 3px groove gray;
+}
