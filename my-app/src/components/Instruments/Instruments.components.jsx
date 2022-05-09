@@ -35,6 +35,7 @@ function Instruments(props) {
                                 />
 
                                 <p id="artName">{article.instrumento}</p>
+                                <p id="artGen">{article.genero}</p>
                                 <p id="artP">{"$" + article.precio}</p>
                             </div>
                         </div>
