@@ -6,7 +6,7 @@ import {
   Route,
   Routes,
 } from "react-router-dom";
-import {Instruments} from './components'
+import {Instruments} from './components';
 
 
 function App() {
@@ -30,7 +30,7 @@ function App() {
 
     setProducts(newProducts);
 
-    console.log(newProducts);
+    console.log(newProducts[1].id);
   }
   useEffect(() => {
     test()

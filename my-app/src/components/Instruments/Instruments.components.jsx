@@ -1,13 +1,59 @@
 import React from "react";
 import './instruments.css';
+import 'react-responsive-modal/styles.css';
+import { Modal } from 'react-responsive-modal';
+import { useState } from 'react';
+
 
 
 function Instruments(props) {
+
+    const [open, setOpen] = useState(false);
+
+    const onOpenModal = () => setOpen(true);
+    const onCloseModal = () => setOpen(false);
+    const [modalArt, setModalArt] = useState([]);
+    const fun = article => {
+        onOpenModal();
+        setModalArt(article);
+        console.log(article.descripcion)
+    }
+
+    const details = (
+        <>
+            <img
+                className="imagesDisplay"
+                key={modalArt.instrumento}
+                name={modalArt.instrumento}
+                alt={modalArt.instrumento}
+                src={modalArt.url}
+            />
+
+            <button name="buyBtn">Comprar</button>
+            <button name="addBtn">Agregar al carrito</button>
+
+            <div id="details">
+                <p id="artName">{modalArt.instrumento}</p>
+                <p id="artGen">{modalArt.genero}</p>
+                <p id="artP">{"$" + modalArt.precio}</p>
+
+                <p>Descripcion</p>
+                <p id="descripcion">{modalArt.descripcion}</p>
+            </div>
+
+
+
+        </>
+
+    );
+
     return (
         <>
-            {props.products?.map((article) => {
+            {props.products.map((article) => {
+
                 return (
-                    <div className="App" key={article.instrumento}>
+
+                    <div className="App" key={article.instrumento} onClick={() => fun(article)}>
                         <div id="instTable" key={article.instrumento}>
                             <div id="artSquare"
                                 className="artTabs"
@@ -41,8 +87,18 @@ function Instruments(props) {
                         </div>
 
                     </div>
+
+
+
                 );
+
+
             })}
+
+            <Modal open={open} onClose={onCloseModal} center>
+                {details}
+            </Modal>
+
         </>
     );
 }
