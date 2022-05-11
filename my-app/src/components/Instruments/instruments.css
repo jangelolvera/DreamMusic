@@ -1,13 +1,19 @@
 html, body{
     height: 100%;
     width: 100%;
+
+}
+
+#general{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
 }
 
 #root{
     height: 100%;
     width: 100%;
-    display: flex;
-    flex-wrap: wrap;
 }
 
 #artSquare{
@@ -34,6 +40,11 @@ html, body{
     height: 500px;
 }
 
+#grid{
+    display: flex;
+    flex-wrap: wrap;
+}
+
 #compName:hover{
     color:white;
     background-color: #4DA167;
@@ -44,4 +55,10 @@ html, body{
 #artSquare:hover{
     background-color: white;
     border: 3px groove gray;
+}
+
+#inputQuery{
+    width: 60vw;
+    height: 5vh;
+    margin: 1em;
 }
