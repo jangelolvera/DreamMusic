@@ -7,7 +7,7 @@ import {
   Routes,
 } from "react-router-dom";
 import {Instruments} from './components';
-
+import {Courses} from './components';
 
 function App() {
 
@@ -42,6 +42,9 @@ function App() {
         <Routes>
 
           <Route path="/" element={<Instruments products={products}/>}></Route>
+          <Route path="/cursos" element={<Courses/>}></Route>
+          
+
 
         </Routes>
       </Router>
