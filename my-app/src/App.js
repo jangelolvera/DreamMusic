@@ -8,6 +8,8 @@ import {
 } from "react-router-dom";
 import {Instruments} from './components';
 import {Courses} from './components';
+import {Checkout} from './components';
+
 
 function App() {
 
@@ -43,6 +45,8 @@ function App() {
 
           <Route path="/" element={<Instruments products={products}/>}></Route>
           <Route path="/cursos" element={<Courses/>}></Route>
+          <Route path="/checkout" element={<Checkout  products={products}/>}></Route>
+
           
 
 

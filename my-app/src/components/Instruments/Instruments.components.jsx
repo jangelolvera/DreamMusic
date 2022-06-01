@@ -3,7 +3,16 @@ import './instruments.css';
 import 'react-responsive-modal/styles.css';
 import { Modal } from 'react-responsive-modal';
 import { useState } from 'react';
+import Courses from "../Courses/Courses.components";
+import { useNavigate } from "react-router-dom";
 
+import {
+    BrowserRouter as
+        Router,
+    Route,
+    Routes,
+    Link,
+} from "react-router-dom";
 
 
 function Instruments(props) {
@@ -21,6 +30,12 @@ function Instruments(props) {
         console.log(article.id)
     }
 
+    let navigate = useNavigate(); 
+    const routeChange = () =>{ 
+      let path = `checkout`; 
+      navigate(path);
+    }
+
     const details = (
         <>
             <img
@@ -31,8 +46,10 @@ function Instruments(props) {
                 src={modalArt.url}
             />
 
-            <button name="buyBtn">Comprar</button>
-            <button name="addBtn">Agregar al carrito</button>
+            <button id="buyBtn" onClick={routeChange}>
+                Comprar
+            </button>
+            <button id="addBtn">Agregar al carrito</button>
 
             <div id="details">
                 <p id="artName">{modalArt.instrumento}</p>
@@ -53,65 +70,66 @@ function Instruments(props) {
         <div id="general">
 
             <nav id="topBar">
-                <input id="inputQuery" placeholder="¿Buscas algún instrumento?" onChange={event => setQuery(event.target.value)} />
 
+                <input id="inputQuery" placeholder="¿Buscas algún instrumento?" onChange={event => setQuery(event.target.value)} />
+                <Link to='/cursos' id="irCursos">Ver cursos</Link>
             </nav>
 
             <div id="grid">
                 {
-                props.products.filter(article => {
-                    if (query === "") {
-                        //if query is empty
-                        return article;
-                    } else if (article.instrumento.toLowerCase().includes(query.toLowerCase())) {
-                        //returns filtered array
-                        return article;
-                    }
-                }).map((article) => {
+                    props.products.filter(article => {
+                        if (query === "") {
+                            //if query is empty
+                            return article;
+                        } else if (article.instrumento.toLowerCase().includes(query.toLowerCase())) {
+                            //returns filtered array
+                            return article;
+                        }
+                    }).map((article) => {
 
-                    return (
+                        return (
 
-                        <div className="App" key={article.instrumento} onClick={() => fun(article)}>
-                            <div id="instTable" key={article.instrumento}>
-                                <div id="artSquare"
-                                    className="artTabs"
-                                    type="button"
-                                    key={article.instrumento}
-                                    name={article.instrumento}
-                                    style={{
-                                        width: '305px',
-                                        height: '490px',
-                                        margin: '2px solid black',
-                                    }}
-                                >
-                                    <img
-                                        className="imagesDisplay"
+                            <div className="App" key={article.instrumento} onClick={() => fun(article)}>
+                                <div id="instTable" key={article.instrumento}>
+                                    <div id="artSquare"
+                                        className="artTabs"
+                                        type="button"
                                         key={article.instrumento}
                                         name={article.instrumento}
-                                        alt={article.instrumento}
-                                        src={article.url}
                                         style={{
-                                            width: '250px',
-                                            height: '280px',
-                                            marginBottom: '10px',
-
+                                            width: '305px',
+                                            height: '490px',
+                                            margin: '2px solid black',
                                         }}
-                                    />
+                                    >
+                                        <img
+                                            className="imagesDisplay"
+                                            key={article.instrumento}
+                                            name={article.instrumento}
+                                            alt={article.instrumento}
+                                            src={article.url}
+                                            style={{
+                                                width: '250px',
+                                                height: '280px',
+                                                marginBottom: '10px',
 
-                                    <p id="artName">{article.instrumento}</p>
-                                    <p id="artGen">{article.genero}</p>
-                                    <p id="artP">{"$" + article.precio}</p>
+                                            }}
+                                        />
+
+                                        <p id="artName">{article.instrumento}</p>
+                                        <p id="artGen">{article.genero}</p>
+                                        <p id="artP">{"$" + article.precio}</p>
+                                    </div>
                                 </div>
+
                             </div>
 
-                        </div>
 
 
+                        );
 
-                    );
 
-
-                })}
+                    })}
             </div>
 
             <Modal open={open} onClose={onCloseModal} center>

@@ -1,33 +1,48 @@
-html, body{
+html,
+body {
     height: 100%;
     width: 100%;
+    margin: 0%;
 
 }
 
-#general{
+#general {
     display: flex;
     flex-direction: column;
     justify-content: center;
     align-items: center;
+    width: 100%;
+    margin: 0%;
 }
 
-#root{
+#topBar {
+    background-color: #FFA31A;
+    width: 100%;
+    text-align: center;
+    margin: 0%;
+
+}
+
+#root {
     height: 100%;
     width: 100%;
+    margin: 0;
 }
 
-#artSquare{
+#artSquare {
     display: flex;
     flex-direction: column;
     justify-content: center;
     align-items: center;
-    background-color: white;
+    background-color: #F2F2F2;
     border: 0px;
     border-radius: 10px;
 
+
+
 }
 
-.artTable{
+.artTable {
     width: 305px;
     height: 500px;
     padding: 0%;
@@ -35,30 +50,84 @@ html, body{
     border-radius: 10px;
 }
 
-.App{
+.App {
     margin: 20px;
     height: 500px;
 }
 
-#grid{
+#grid {
     display: flex;
     flex-wrap: wrap;
+    height: 100%;
+    width: 100%;
 }
 
-#compName:hover{
-    color:white;
+#compName:hover {
+    color: white;
     background-color: #4DA167;
     cursor: pointer;
     border-radius: 5px;
 }
 
-#artSquare:hover{
+#artSquare:hover {
     background-color: white;
     border: 3px groove gray;
 }
 
-#inputQuery{
+#inputQuery {
     width: 60vw;
     height: 5vh;
     margin: 1em;
+}
+
+
+#buyBtn {
+    transition-duration: 0.4s;
+    border: none;
+    color: black;
+    padding: 15px 32px;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    font-size: 16px;
+    margin: 4px;
+    
+}
+
+#buyBtn:hover {
+    background-color: #4CAF50;
+    /* Green */
+    color: white;
+}
+
+#addBtn {
+    transition-duration: 0.4s;
+    border: none;
+    color: black;
+    padding: 15px 32px;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    font-size: 16px;
+    margin: 4px;
+}
+
+#addBtn:hover {
+    background-color: #4CAF50;
+    /* Green */
+    color: white;
+}
+
+#irCursos{
+    font-size: 15px;
+    background-color: #F2F2F2;
+    color: black;
+    padding: 10px;
+    border-radius: 8px;
+}
+
+#irCursos:hover{
+    background-color: gray;
+    /* Green */
+    color: white;
 }

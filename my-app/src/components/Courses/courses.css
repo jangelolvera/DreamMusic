@@ -1,4 +1,23 @@
-#root{
+#root {
     display: flex;
     flex-wrap: wrap;
+}
+
+#courseSquare {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    background-color: #F2F2F2;
+    border: 0px;
+    border-radius: 10px;
+    margin: 6px;
+}
+#courseSquare:hover {
+    background-color: white;
+    border: 3px groove gray;
+}
+#root {
+    width: 100%;
+    text-align: center;
 }

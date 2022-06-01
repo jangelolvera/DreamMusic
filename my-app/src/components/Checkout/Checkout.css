@@ -1,0 +1,67 @@
+html{
+    margin-left: 10px;
+}
+
+#topNav {
+    width: 1000vw;
+    text-align: center;
+    font-size: 30px;
+}
+
+input[type=text] {
+    width: 90%;
+    padding: 12px 20px;
+    margin: 8px 0;
+    box-sizing: border-box;
+    margin-right: 20px;
+  }
+
+#direccionForm{
+    display: flex;
+    flex-direction: column;
+    width: 80%;
+}
+
+#saveBtn {
+    background-color: #4CAF50; /* Green */
+    border: none;
+    color: white;
+    padding: 15px 32px;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    font-size: 16px;
+    transition-duration: 0.4s;
+  }
+
+  #saveBtn:hover {
+    box-shadow: 0 12px 16px 0 rgba(0,0,0,0.24), 0 17px 50px 0 rgba(0,0,0,0.19);
+  }
+
+  #pagoyart{
+      display: flex;
+      flex-direction: column;
+  }
+
+  #terminarBtn {
+    background-color: #4CAF50; /* Green */
+    border: none;
+    color: white;
+    padding: 15px 32px;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    font-size: 16px;
+    transition-duration: 0.4s;
+    width: 100%;
+  }
+
+  #terminarBtn:hover {
+    box-shadow: 0 12px 16px 0 rgba(0,0,0,0.24), 0 17px 50px 0 rgba(0,0,0,0.19);
+  }
+
+  #imgArticulo{
+    width: 10vw;
+    height: auto;
+}
+
